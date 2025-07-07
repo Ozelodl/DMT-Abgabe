@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <style>
+        .purple_box{
+            height: 15vh;
+            width: 15vh;
+            background-color: purple;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="purple_box"></div>
+
+    <script>gsap.from(".purple_box", { x: 100, y:100, delay: 0.5, duration: 1.5, fill: 'blue'})
+    gsap.to(".purple_box", { x: 200, 
+        duration: 1.5, 
+        delay: 3, 
+        fill:'purple'})
+        
+    gsap.fromTo(".purple_box", { x: 200, fill: 'purple', delay: 5}, { x: 400, y: 100, fill: 'red', delay: 5, duration: 3})
+    </script>
+    
+</body>
+</html>
