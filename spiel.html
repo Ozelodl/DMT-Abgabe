@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storytelling</title>
+    <link rel="stylesheet" href="spiel.css">
+</head>
+<body>
+    <div id="overlay">
+        <h1>Willkommen!</h1>
+        <p>Dies ist ein Spiel um dir Kognitive Dissonanz näher zu bringen. Versuche ein so niedriges Dissonanzlevel wie möglich zu erhalten! Klicke auf Start um loszulegen.</p>
+        <button id="start-button">Start</button>
+    </div>
+    <div id="spielfeld" class="spielfeld" onload="awake()">
+     <div class="content">
+        <div id="dis-meter">
+            <div id="percentage">
+                <div class="center" id="text-item">50%</div>
+            </div>
+        </div>
+        <label for="dis-meter">Dissonanz-Meter</label>
+        <div id="story-item">Hier steht der aktuelle Stand der Story!</div>
+        <div id="answer-area" class="container">
+            <div class="aura" id="aA" onmouseenter="enterUpdate('0')" onmouseleave="leaveUpdate('0')">
+                <button id="0" onclick="updateDisMeter(0)">Antwort A!</button>
+            </div>
+            <div class="aura" id="aB" onmouseenter="enterUpdate('1')" onmouseleave="leaveUpdate('1')">
+                <button id="1" onclick="updateDisMeter(1)">Antwort B!</button>
+            </div>
+            <div class="aura" id="aC" onmouseenter="enterUpdate('2')" onmouseleave="leaveUpdate('2')">
+                <button id="2" onclick="updateDisMeter(2)">Antwort C!</button>
+            </div>
+            <div class="aura"  id="aD" onmouseenter="enterUpdate('3')" onmouseleave="leaveUpdate('3')">
+                <button id= "3" onclick="updateDisMeter(3)">Antwort D!</button>
+            </div>
+        </div>
+     </div>
+    </div>
+
+    <script src="spiel.js"></script>
+</body>
+</html>

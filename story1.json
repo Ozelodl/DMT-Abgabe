@@ -1,0 +1,235 @@
+{
+    "inkVersion": 21,
+    "root": [
+        [
+            {
+                "->": "start"
+            },
+            [
+                "done",
+                {
+                    "#f": 5,
+                    "#n": "g-0"
+                }
+            ],
+            null
+        ],
+        "done",
+        {
+            "start": [
+                [
+                    "#",
+                    "/#",
+                    "#",
+                    "/#",
+                    "^Du stehst nach deiner Präsentation vor dem Konferenzraum. Deine Kollegin Sarah kommt auf dich zu mit einem strahlenden Lächeln.",
+                    "\n",
+                    "^\"Das war wirklich beeindruckend! Du hast das Thema so klar erklärt - ich hab endlich verstanden, worum es geht!\"",
+                    "\n",
+                    "ev",
+                    "str",
+                    "^\"Danke, das freut mich sehr!\"",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-0",
+                        "flg": 4
+                    },
+                    "ev",
+                    "str",
+                    "^\"Ach, war doch nicht so gut...\"",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-1",
+                        "flg": 4
+                    },
+                    "ev",
+                    "str",
+                    "^Schnell das Thema wechseln",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-2",
+                        "flg": 4
+                    },
+                    {
+                        "c-0": [
+                            "^ ",
+                            {
+                                "->": "accept_path"
+                            },
+                            "\n",
+                            {
+                                "#f": 5
+                            }
+                        ],
+                        "c-1": [
+                            "^ ",
+                            {
+                                "->": "deflect_path"
+                            },
+                            "\n",
+                            {
+                                "#f": 5
+                            }
+                        ],
+                        "c-2": [
+                            "^ ",
+                            {
+                                "->": "avoid_path"
+                            },
+                            "\n",
+                            {
+                                "#f": 5
+                            }
+                        ]
+                    }
+                ],
+                {
+                    "#f": 1
+                }
+            ],
+            "accept_path": [
+                "^Sarah lächelt noch breiter. \"Genau diese Einstellung macht dich zu so einer tollen Kollegin! Du nimmst dir Zeit für Details.\"",
+                "\n",
+                "^Du spürst, wie sich ein warmes Gefühl in deiner Brust ausbreitet. Es fühlt sich... richtig an.",
+                "\n",
+                "ev",
+                "str",
+                "^\"Du hilfst mir auch immer weiter\"",
+                "/str",
+                "/ev",
+                {
+                    "*": ".^.c-3",
+                    "flg": 4
+                },
+                "ev",
+                "str",
+                "^\"Jetzt übertreibst du aber!\"",
+                "/str",
+                "/ev",
+                {
+                    "*": ".^.c-4",
+                    "flg": 4
+                },
+                {
+                    "c-3": [
+                        "^ \"Das stimmt - wir ergänzen uns gut!\" Sarah nickt begeistert.",
+                        "\n",
+                        "^ ENDE 1: Ihr lacht zusammen und geht gemeinsam zum Mittagessen. Ein schöner Moment der Wertschätzung.",
+                        "\n",
+                        "end",
+                        {
+                            "#f": 5
+                        }
+                    ],
+                    "c-4": [
+                        "^ Sarah schüttelt den Kopf. \"Nein, tue ich nicht. Du unterschätzt dich wirklich.\"",
+                        "\n",
+                        "^ ENDE 2: Die Unterhaltung wird etwas angespannt. Sarah wirkt verwirrt von deiner Reaktion.",
+                        "\n",
+                        "end",
+                        {
+                            "#f": 5
+                        }
+                    ]
+                }
+            ],
+            "deflect_path": [
+                "^ Sarah runzelt die Stirn. \"Wie meinst du das? Ich fand es wirklich gut!\"",
+                "\n",
+                "^\"Ich hab so viel gestottert und die eine Folie war total unübersichtlich...\"",
+                "\n",
+                "ev",
+                "str",
+                "^Weitere Kritik an dir selbst",
+                "/str",
+                "/ev",
+                {
+                    "*": ".^.c-5",
+                    "flg": 4
+                },
+                "ev",
+                "str",
+                "^\"Okay, vielleicht war's nicht so schlimm\"",
+                "/str",
+                "/ev",
+                {
+                    "*": ".^.c-6",
+                    "flg": 4
+                },
+                {
+                    "c-5": [
+                        "^ \"Und überhaupt, die anderen waren viel besser vorbereitet...\" Sarah seufzt.",
+                        "\n",
+                        "^ ENDE 3: Sarah gibt auf. \"Okay, wenn du meinst.\" Sie wendet sich ab, sichtlich enttäuscht.",
+                        "\n",
+                        "end",
+                        {
+                            "#f": 5
+                        }
+                    ],
+                    "c-6": [
+                        "^ Sarah lächelt erleichtert. \"Genau! Du warst authentisch und kompetent.\"",
+                        "\n",
+                        "^ ENDE 4: Ihr kommt ins Gespräch über die Präsentation. Sarah gibt dir weitere aufbauende Tipps.",
+                        "\n",
+                        "end",
+                        {
+                            "#f": 5
+                        }
+                    ]
+                }
+            ],
+            "avoid_path": [
+                "^\"Ähm, hast du schon die neuen Quartalszahlen gesehen?\"",
+                "\n",
+                "^Sarah blinzelt überrascht. \"Äh... nein, noch nicht. Aber ich wollte dir gerade sagen, dass...\"",
+                "\n",
+                "ev",
+                "str",
+                "^Weiter das Thema wechseln",
+                "/str",
+                "/ev",
+                {
+                    "*": ".^.c-7",
+                    "flg": 4
+                },
+                "ev",
+                "str",
+                "^\"Entschuldige, lass uns über die Präsentation reden\"",
+                "/str",
+                "/ev",
+                {
+                    "*": ".^.c-8",
+                    "flg": 4
+                },
+                {
+                    "c-7": [
+                        "^ \"Die Umsätze sind ja interessant, findest du nicht?\" Sarah nickt verwirrt.",
+                        "\n",
+                        "^ ENDE 5: Das Gespräch wird oberflächlich. Sarah merkt, dass du ihr ausweichst und fühlt sich zurückgewiesen.",
+                        "\n",
+                        "end",
+                        {
+                            "#f": 5
+                        }
+                    ],
+                    "c-8": [
+                        "^ Sarah lächelt erleichtert. \"Gerne! Ich wollte wirklich sagen, dass du heute toll warst.\"",
+                        "\n",
+                        "^ ENDE 6: Du atmest tief durch und schaffst es, \"Danke\" zu sagen. Es wird ein nettes Gespräch.",
+                        "\n",
+                        "end",
+                        {
+                            "#f": 5
+                        }
+                    ]
+                }
+            ],
+            "#f": 1
+        }
+    ],
+    "listDefs": {}
+}

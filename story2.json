@@ -1,0 +1,190 @@
+{
+    "inkVersion": 21,
+    "root": [
+        [
+            "#",
+            "^gptcontext: Du bist ein einfühlsamer KI-Assistent, der Menschen dabei hilft, ihre Gefühle beim Backfire-Effekt zu verstehen. Du kennst den Oatmeal-Comic 'You're not going to believe what I'm about to tell you' und hilfst dabei, die emotionalen Reaktionen zu reflektieren, die entstehen, wenn wir mit Informationen konfrontiert werden, die unseren Überzeugungen widersprechen. Du bist nicht da, um zu belehren, sondern um zu verstehen und zu helfen. Du reagierst empathisch auf die Gefühle des Nutzers - Verwirrung, Abwehr, Wut, Unsicherheit - und hilfst dabei, diese einzuordnen. Du gibst keine Meinungen ab, sondern hilfst beim Reflektieren. Wenn der Nutzer seine Gefühle oder Gedanken äußert, reagierst du verständnisvoll und fragst nach, um tiefer zu verstehen. Falls der Nutzer fragt, was der Backfire-Effekt ist, erklärst du es kurz und einfühlsam.",
+            "/#",
+            {
+                "->": "start_conversation"
+            },
+            [
+                "done",
+                {
+                    "#f": 5,
+                    "#n": "g-0"
+                }
+            ],
+            null
+        ],
+        "done",
+        {
+            "start_conversation": [
+                [
+                    "#",
+                    "^gpt:on",
+                    "/#",
+                    "#",
+                    "^choices:off",
+                    "/#",
+                    "#",
+                    "^gptprompt: Du startest ein einfühlsames Gespräch. Der Nutzer hat vielleicht gerade eine Situation erlebt, wo er mit Informationen konfrontiert wurde, die seinen Überzeugungen widersprechen. Frag ihn freundlich, wie es ihm geht oder was ihn beschäftigt. Erwähne, dass du da bist, um über diese manchmal schwierigen Gefühle zu sprechen.",
+                    "/#",
+                    "^Hallo! Ich bin hier, um mit dir über die Gefühle zu sprechen, die entstehen können, wenn wir mit neuen oder widersprüchlichen Informationen konfrontiert werden.",
+                    "\n",
+                    "^Wie geht es dir gerade? Beschäftigt dich etwas Bestimmtes?",
+                    "\n",
+                    "ev",
+                    "str",
+                    "^[Nutzer antwortet mit seinen Gefühlen oder Gedanken]",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-0",
+                        "flg": 4
+                    },
+                    {
+                        "c-0": [
+                            "\n",
+                            {
+                                "->": "listen_and_respond"
+                            },
+                            {
+                                "#f": 5
+                            }
+                        ]
+                    }
+                ],
+                {
+                    "#f": 1
+                }
+            ],
+            "listen_and_respond": [
+                [
+                    "#",
+                    "^gpt:on",
+                    "/#",
+                    "#",
+                    "^choices:off",
+                    "/#",
+                    "#",
+                    "^gptprompt: Der Nutzer hat seine Gefühle oder Gedanken geteilt. Reagiere einfühlsam darauf. Falls er von widersprüchlichen Informationen spricht, erkenne seine Gefühle an (Verwirrung, Abwehr, Wut, Unsicherheit). Frag nach, um tiefer zu verstehen. Falls er den Backfire-Effekt erwähnt oder danach fragt, erkläre es kurz und verständnisvoll. Bleibe bei seinen Gefühlen und urteile nicht.",
+                    "/#",
+                    "^Ich höre dir zu und verstehe deine Gefühle. Es ist ganz normal, dass wir manchmal starke Reaktionen haben, wenn wir mit Informationen konfrontiert werden, die unseren Überzeugungen widersprechen.",
+                    "\n",
+                    "^Möchtest du mir mehr darüber erzählen? Was genau hat diese Gefühle ausgelöst?",
+                    "\n",
+                    "ev",
+                    "str",
+                    "^[Nutzer erzählt mehr über seine Situation]",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-0",
+                        "flg": 4
+                    },
+                    {
+                        "c-0": [
+                            "\n",
+                            {
+                                "->": "deeper_conversation"
+                            },
+                            {
+                                "#f": 5
+                            }
+                        ]
+                    }
+                ],
+                {
+                    "#f": 1
+                }
+            ],
+            "deeper_conversation": [
+                [
+                    "#",
+                    "^gpt:on",
+                    "/#",
+                    "#",
+                    "^choices:off",
+                    "/#",
+                    "#",
+                    "^gptprompt: Der Nutzer hat mehr über seine Situation erzählt. Reagiere empathisch und hilf ihm dabei, seine Gefühle zu verstehen. Falls angemessen, erwähne gently den Backfire-Effekt - dass unser Gehirn manchmal unsere Überzeugungen verstärkt, wenn sie herausgefordert werden, wie im Oatmeal-Comic gezeigt. Frag, wie er sich dabei fühlt oder was er denkt. Bleibe unterstützend und nicht belehrend.",
+                    "/#",
+                    "^Danke, dass du das mit mir teilst. Es klingt, als hättest du eine wirklich intensive Erfahrung gemacht.",
+                    "\n",
+                    "^Manchmal passiert es, dass unser Gehirn automatisch unsere bestehenden Überzeugungen verstärkt, wenn sie herausgefordert werden - das nennt sich der Backfire-Effekt. Es ist wie ein Schutzreflex.",
+                    "\n",
+                    "^Wie fühlst du dich dabei, wenn du merkst, dass dein Gehirn sich 'verteidigt'?",
+                    "\n",
+                    "ev",
+                    "str",
+                    "^[Nutzer reflektiert über seine Gefühle]",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-0",
+                        "flg": 4
+                    },
+                    {
+                        "c-0": [
+                            "\n",
+                            {
+                                "->": "continue_support"
+                            },
+                            {
+                                "#f": 5
+                            }
+                        ]
+                    }
+                ],
+                {
+                    "#f": 1
+                }
+            ],
+            "continue_support": [
+                [
+                    "#",
+                    "^gpt:on",
+                    "/#",
+                    "#",
+                    "^choices:off",
+                    "/#",
+                    "#",
+                    "^gptprompt: Der Nutzer hat über seine Gefühle reflektiert. Bleibe unterstützend und anerkennend. Hilf ihm dabei zu verstehen, dass diese Reaktionen menschlich und normal sind. Falls er möchte, kann das Gespräch weitergehen - frag, ob er noch etwas besprechen möchte oder ob du ihm auf andere Weise helfen kannst. Bleibe offen für seine Bedürfnisse.",
+                    "/#",
+                    "^Das ist sehr ehrlich von dir. Es braucht Mut, diese Gefühle zu erkennen und anzusprechen.",
+                    "\n",
+                    "^Jeder von uns erlebt diese Reaktionen - es ist ein Teil unserer menschlichen Natur. Das Wichtige ist, dass du dir dessen bewusst wirst.",
+                    "\n",
+                    "^Gibt es noch etwas anderes, worüber du sprechen möchtest? Oder kann ich dir auf andere Weise helfen?",
+                    "\n",
+                    "ev",
+                    "str",
+                    "^[Nutzer antwortet - entweder mit neuen Themen oder Ende]",
+                    "/str",
+                    "/ev",
+                    {
+                        "*": ".^.c-0",
+                        "flg": 4
+                    },
+                    {
+                        "c-0": [
+                            "\n",
+                            {
+                                "->": "continue_support"
+                            },
+                            {
+                                "#f": 5
+                            }
+                        ]
+                    }
+                ],
+                {
+                    "#f": 1
+                }
+            ],
+            "#f": 1
+        }
+    ],
+    "listDefs": {}
+}

@@ -1,0 +1,175 @@
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Sorgt dafür, dass es über allem liegt */
+}
+
+#start-button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+
+body{
+    overflow: hidden;
+}
+
+#dis-meter{
+    height: 5vh;
+    width: 20vh;
+    background-color: aquamarine;
+    border-style: solid;
+    border-width: 0.5vh;
+    border-color: black;
+}
+
+#percentage{
+    width: 50%;
+    height: 100%;
+    background-color: yellow;
+}
+
+.center{
+    text-align: center;
+    padding: auto;
+}
+
+#story-item{
+    font-size: 2.5vh;
+}
+
+.spacer{
+    height: 20vh;
+}
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 1vh;
+}
+
+.aura{
+    margin-left: 2vh;
+    margin-right: 2vh;
+    padding: 8vh;
+    text-align: center;
+    transition: all 2s;
+    background-color: transparent;
+}
+.container > div > button{
+    text-align: center;
+    padding: 5vh;
+    margin: 1vh;
+    background-color: dodgerblue;
+    transition: all 1s;
+}
+
+
+.container > div > button:hover{
+    background-color: blueviolet;
+}
+
+#story-item{
+    text-align: center;
+    border-style: solid;
+    border-width: 0.5vh;
+    padding: 3vh;
+    margin: 3vh;
+    background-color: lightgray;
+
+}
+.spielfeld{
+    background-color: lightblue;
+    min-height: 100vh;
+    position: fixed;
+    transition: all 2s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Hintergrund bleibt hinter dem Inhalt */
+  animation: liquidAnimation 10s ease infinite;
+}
+
+.farbe1{
+    min-height: 100vh;
+    position: fixed;
+    transition: all 2s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Hintergrund bleibt hinter dem Inhalt */
+  animation: liquidAnimation 10s ease infinite;
+}
+
+.farbe2{
+    min-height: 100vh;
+    position: fixed;
+    transition: all 2s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Hintergrund bleibt hinter dem Inhalt */
+    animation: redAnimation 10s ease infinite;
+}
+
+@keyframes liquidAnimation {
+  10% {
+    background-color: lightblue;
+  }
+  50% {
+    background-color: aquamarine;
+  }
+  95% {
+    background-color: lightgreen;
+  }
+  100%{
+    background-color: lightblue;
+  }
+}
+
+@keyframes redAnimation{
+      10% {
+    background-color: orange;
+  }
+  50% {
+    background-color: orangered;
+  }
+  95% {
+    background-color: red;
+  }
+  100%{
+    background-color: orange;
+  }
+}
+
+.shake:hover > button{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+    background-color: red;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

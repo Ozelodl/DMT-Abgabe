@@ -1,0 +1,8 @@
+lottie.loadAnimation({
+    container: document.getElementById("ink1"),
+    renderer: "svg",
+    loop: false,
+    autoplay: true,
+    path: "animations/intro.json"
+  });
+  
